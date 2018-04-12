@@ -1,0 +1,9 @@
+Building LendXpress
+
+See doc/readme-qt.rst for instructions on building LendXpress QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of LendXpress.
+
+See doc/build-*.txt for instructions on building DextraCoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of LendXpress.

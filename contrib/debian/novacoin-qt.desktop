@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=LendXpress
+Comment=LendXpress P2P Cryptocurrency
+Comment[fr]=LendXpress, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=LendXpress, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/LendXpress-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin80.xpm
+MimeType=x-scheme-handler/LendXpress;
+Categories=Office;

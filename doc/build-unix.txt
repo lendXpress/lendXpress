@@ -1,146 +1,14 @@
-
-LendXpress Official Development Repo
-==================================
-### LendXpress Resources
-* Client and Source:
-* Documentation: 
-
-* Help: 
-[Twitter]  https://twitter.com/LendXpress)
-[Dev Support] dev_unit@lendXpress.co
-[Official Project Website]  https://lendxpress.co/
-[GITHUB]  https://github.com/lendXpress/lendXpress
+Copyright (c) 2009-2012 Bitcoin Developers
+Distributed under the MIT/X11 software license, see the accompanying
+file license.txt or http://www.opensource.org/licenses/mit-license.php.
+This product includes software developed by the OpenSSL Project for use in
+the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
+cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP
+software written by Thomas Bernard.
 
 
-Repo Guidelines
-================================
-
-* Developers work in their own forks, then submit pull requests when they think their feature or bug fix is ready.
-* If it is a simple/trivial/non-controversial change, then one of the development team members simply pulls it.
-* If it is a more complicated or potentially controversial change, then the change may be discussed in the pull request, or the requester may be asked to start a discussion in the [LendXpress Forum] for a broader community discussion. 
-* The patch will be accepted if there is broad consensus that it is a good thing. Developers should expect to rework and resubmit patches if they don't match the project's coding conventions (see coding.txt) or are controversial.
-* From time to time a pull request will become outdated. If this occurs, and the pull is no longer automatically mergeable; a comment on the pull will be used to issue a warning of closure.  Pull requests closed in this manner will have their corresponding issue labeled 'stagnant'.
-                                  
-								    ********************BUILDING LENDXPRESS**************************
-								
-	
-	
-	===================WINDOWS BUILD NOTES===================
-
-
-Compilers Supported
--------------------
-TODO: What works?
-Note: releases are cross-compiled using mingw running on Linux.
-
-
-Dependencies
-------------
-Libraries you need to download separately and build:
-
-                default path               download
-OpenSSL         \openssl-1.0.1b-mgw        http://www.openssl.org/source/
-Berkeley DB     \db-4.8.30.NC-mgw          http://www.oracle.com/technology/software/products/berkeley-db/index.html
-Boost           \boost-1.47.0-mgw          http://www.boost.org/users/download/
-miniupnpc       \miniupnpc-1.6-mgw         http://miniupnp.tuxfamily.org/files/
-
-Their licenses:
-OpenSSL        Old BSD license with the problematic advertising requirement
-Berkeley DB    New BSD license with additional requirement that linked software must be free open source
-Boost          MIT-like license
-miniupnpc      New (3-clause) BSD license
-
-Versions used in this release:
-OpenSSL      1.0.1b
-Berkeley DB  4.8.30.NC
-Boost        1.47.0
-miniupnpc    1.6
-
-
-OpenSSL
--------
-MSYS shell:
-un-tar sources with MSYS 'tar xfz' to avoid issue with symlinks (OpenSSL ticket 2377)
-change 'MAKE' env. variable from 'C:\MinGW32\bin\mingw32-make.exe' to '/c/MinGW32/bin/mingw32-make.exe'
-
-cd /c/openssl-1.0.1b-mgw
-./config
-make
-
-Berkeley DB
------------
-MSYS shell:
-cd /c/db-4.8.30.NC-mgw/build_unix
-sh ../dist/configure --enable-mingw --enable-cxx
-make
-
-Boost
------
-DOS prompt:
-downloaded boost jam 3.1.18
-cd \boost-1.47.0-mgw
-bjam toolset=gcc --build-type=complete stage
-
-MiniUPnPc
----------
-UPnP support is optional, make with USE_UPNP= to disable it.
-
-MSYS shell:
-cd /c/miniupnpc-1.6-mgw
-make -f Makefile.mingw
-mkdir miniupnpc
-cp *.h miniupnpc/
-
-LendXpress
--------
-DOS prompt:
-cd \LendXpress\src
-mingw32-make -f makefile.mingw
-strip LendXpress.exe
-
-
-	 ================ OSX BUILD NOTES================
-Tested on 10.5 and 10.6 intel.  PPC is not supported because it's big-endian.
-
-All of the commands should be executed in Terminal.app.. it's in
-/Applications/Utilities
-
-You need to install XCode with all the options checked so that the compiler and
-everything is available in /usr not just /Developer I think it comes on the DVD
-but you can get the current version from http://developer.apple.com
-
-
-1.  Clone the github tree to get the source code:
-
-git clone git@github.com:rat4/LendXpress.git LendXpress
-
-2.  Download and install MacPorts from http://www.macports.org/
-
-2a. (for 10.7 Lion)
-    Edit /opt/local/etc/macports/macports.conf and uncomment "build_arch i386"
-
-3.  Install dependencies from MacPorts
-
-sudo port install boost db48 openssl miniupnpc
-
-Optionally install qrencode (and set USE_QRCODE=1):
-sudo port install qrencode
-
-4.  Now you should be able to build LendXpress:
-
-cd LendXpress/src
-make -f makefile.osx
-
-Run:
-  ./LendXpress --help  # for a list of command-line options.
-Run
-  ./LendXpress -daemon # to start the LendXpress daemon.
-Run
-  ./LendXpress help # When the daemon is running, to get a list of RPC commands
-
-								  
-								 ================ UNIX BUILD NOTES================
-
+UNIX BUILD NOTES
+================
 
 To Build
 --------
@@ -283,5 +151,3 @@ exploit even if a vulnerability is found, you can take the following measures:
     RW- R-- RW-
 
     The STK RW- means that the stack is readable and writeable but not executable.
-
-				

@@ -1,0 +1,2 @@
+debian/bin/LendXpress usr/bin
+src/LendXpress usr/lib/LendXpress

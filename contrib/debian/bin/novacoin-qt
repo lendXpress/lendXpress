@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+umask 077
+
+basedir=~/.LendXpress
+dbfile="$basedir/DB_CONFIG"
+cfgfile="$basedir/LendXpress.conf"
+
+[ -e "$basedir" ] || mkdir "$basedir"
+
+# LendXpress does not clean up DB log files by default
+[ -e "$dbfile" ] || echo 'set_flags DB_LOG_AUTOREMOVE' > "$dbfile"
+
+exec /usr/lib/LendXpress/LendXpress-qt "$@"
