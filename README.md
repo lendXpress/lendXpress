@@ -6,10 +6,12 @@ LendXpress Official Development Repo
 * Documentation: 
 
 * Help: 
-[Twitter]  https://twitter.com/LendXpress)
-[Dev Support] dev_unit@lendXpress.co
-[Official Project Website]  https://lendxpress.co/
-[GITHUB]  https://github.com/lendXpress/lendXpress
+SOCIAL MEDIA LINKS
+
+Website: https://ico.lendxpress.co/
+Twitter: https://twitter.com/Lendxpresss
+Telegram: https://t.me/LendXpress
+GitHub: https://github.com/lendXpress/
 
 
 Repo Guidelines
